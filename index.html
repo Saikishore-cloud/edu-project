@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduGenie – Next-Generation AI Learning Assistant for Students. Master any subject with instant AI explanations, quizzes, smart summaries, answers, and personalized learning roadmaps.">
+    <meta name="theme-color" content="#07080e">
+    <title>EduGenie | AI Learning Assistant</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <!-- Ambient Animated Background Grid & Glowing Orbs -->
+    <div class="ambient-bg" aria-hidden="true">
+        <div class="grid-overlay"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand" aria-label="EduGenie Home">
+                <div class="brand-badge">
+                    <span class="brand-spark">✦</span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">EduGenie</span>
+                    <span class="brand-tag">AI LEARNING ASSISTANT</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#workspace" class="nav-link">Workspace</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="ai-status-pill" title="Gemini AI engine is active and ready">
+                    <span class="status-indicator"></span>
+                    <span class="status-label">AI Online</span>
+                </div>
+                <button type="button" class="btn-primary-sm" onclick="scrollToWorkspace()">
+                    <span>Start Learning</span>
+                    <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer" id="mobileDrawer">
+            <nav class="mobile-nav-links">
+                <a href="#home" class="mobile-nav-link" onclick="toggleMobileMenu()">Home</a>
+                <a href="#features" class="mobile-nav-link" onclick="toggleMobileMenu()">Features</a>
+                <a href="#workspace" class="mobile-nav-link" onclick="toggleMobileMenu()">Workspace</a>
+                <a href="#about" class="mobile-nav-link" onclick="toggleMobileMenu()">About</a>
+                <button type="button" class="btn-primary-mobile" onclick="scrollToWorkspace(); toggleMobileMenu();">
+                    Start Learning Now →
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="home">
+            <div class="hero-glow-layer"></div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-spark">✦</span>
+                    <span class="badge-text">NEXT-GEN AI EDUCATION PLATFORM</span>
+                </div>
+
+                <h1 class="hero-title">
+                    Master Any Subject With <br>
+                    <span class="gradient-text">Intelligent AI</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Learn smarter with AI-powered explanations, quizzes, summaries, answers, and personalized learning paths designed to accelerate your academic success.
+                </p>
+
+                <div class="hero-cta-group">
+                    <button type="button" class="btn-primary" onclick="scrollToWorkspace()">
+                        <span>Start Learning</span>
+                        <span class="btn-arrow-wrapper">
+                            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                    </button>
+                    <a href="#features" class="btn-secondary">
+                        <span>Explore Features</span>
+                    </a>
+                </div>
+
+                <!-- Hero Interactive Visual Card -->
+                <div class="hero-visual-card">
+                    <div class="visual-header">
+                        <div class="visual-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="visual-badge">✦ EduGenie Neural Engine Active</div>
+                        <div class="visual-meta">Latency: ~240ms</div>
+                    </div>
+                    <div class="visual-body">
+                        <div class="visual-snippet">
+                            <div class="snippet-prompt">
+                                <span class="snippet-icon">💬</span>
+                                <span class="snippet-text">"Explain Quantum Superposition simply with an analogy"</span>
+                            </div>
+                            <div class="snippet-response">
+                                <span class="snippet-spark">✦</span>
+                                <div class="snippet-answer">
+                                    <strong>Quantum Superposition</strong> is like a spinning coin before it lands. While spinning, it isn’t strictly heads or tails—it exists as a probability of both at the same time until measured!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Metrics Bar -->
+                <div class="hero-metrics">
+                    <div class="metric-item">
+                        <strong class="metric-num">5+</strong>
+                        <span class="metric-label">AI Modules</span>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <strong class="metric-num">24/7</strong>
+                        <span class="metric-label">Learning Support</span>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <strong class="metric-num">Instant</strong>
+                        <span class="metric-label">Deep Explanations</span>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <strong class="metric-num">100%</strong>
+                        <span class="metric-label">Free for Students</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section class="features-section" id="features">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">CORE CAPABILITIES</span>
+                    <h2 class="section-heading">
+                        Everything you need to <br>
+                        <span class="gradient-text">learn better & faster</span>
+                    </h2>
+                    <p class="section-subtext">
+                        Explore dedicated AI tools designed to transform difficult topics into crystal-clear comprehension and practice.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <!-- Feature Card 1: AI Q&A -->
+                    <article class="feature-card card-purple" onclick="selectTask('qa'); scrollToWorkspace();">
+                        <div class="card-number">01</div>
+                        <div class="card-icon-wrap icon-purple">
+                            <span>💬</span>
+                        </div>
+                        <h3 class="card-title">AI Q&A</h3>
+                        <p class="card-desc">
+                            Ask EduGenie any academic question and receive concise, intelligent, and accurate answers instantly.
+                        </p>
+                        <div class="card-action">
+                            <span>Try Q&A Guidance</span>
+                            <span class="action-arrow">→</span>
+                        </div>
+                    </article>
+
+                    <!-- Feature Card 2: Concept Explainer -->
+                    <article class="feature-card card-blue" onclick="selectTask('explain'); scrollToWorkspace();">
+                        <div class="card-number">02</div>
+                        <div class="card-icon-wrap icon-blue">
+                            <span>💡</span>
+                        </div>
+                        <h3 class="card-title">Concept Explainer</h3>
+                        <p class="card-desc">
+                            Understand difficult topics through simplified real-world analogies, step-by-step breakdowns, and examples.
+                        </p>
+                        <div class="card-action">
+                            <span>Simplify a Concept</span>
+                            <span class="action-arrow">→</span>
+                        </div>
+                    </article>
+
+                    <!-- Feature Card 3: Quiz Generator -->
+                    <article class="feature-card card-cyan" onclick="selectTask('quiz'); scrollToWorkspace();">
+                        <div class="card-number">03</div>
+                        <div class="card-icon-wrap icon-cyan">
+                            <span>🎯</span>
+                        </div>
+                        <h3 class="card-title">Quiz Generator</h3>
+                        <p class="card-desc">
+                            Generate practice quizzes from any subject or notes with instant interactive grading.
+                        </p>
+                        <div class="card-action">
+                            <span>Generate Quiz</span>
+                            <span class="action-arrow">→</span>
+                        </div>
+                    </article>
+
+                    <!-- Feature Card 4: Smart Summarizer -->
+                    <article class="feature-card card-amber" onclick="selectTask('summarize'); scrollToWorkspace();">
+                        <div class="card-number">04</div>
+                        <div class="card-icon-wrap icon-amber">
+                            <span>📑</span>
+                        </div>
+                        <h3 class="card-title">Smart Summarizer</h3>
+                        <p class="card-desc">
+                            Turn lengthy educational articles, research notes, and textbook chapters into clear key takeaways.
+                        </p>
+                        <div class="card-action">
+                            <span>Summarize Text</span>
+                            <span class="action-arrow">→</span>
+                        </div>
+                    </article>
+
+                    <!-- Feature Card 5: Learning Path -->
+                    <article class="feature-card card-pink" onclick="selectTask('learn'); scrollToWorkspace();">
+                        <div class="card-number">05</div>
+                        <div class="card-icon-wrap icon-pink">
+                            <span>🗺️</span>
+                        </div>
+                        <h3 class="card-title">Learning Path</h3>
+                        <p class="card-desc">
+                            Build structured chronological roadmaps from beginner to mastery for programming, math, science, and more.
+                        </p>
+                        <div class="card-action">
+                            <span>Build Roadmap</span>
+                            <span class="action-arrow">→</span>
+                        </div>
+                    </article>
+
+                    <!-- Feature Card 6: All-In-One Showcase -->
+                    <article class="feature-card feature-showcase" onclick="scrollToWorkspace();">
+                        <div class="showcase-glow"></div>
+                        <div class="showcase-content">
+                            <span class="showcase-badge">✦ GEMINI POWERED</span>
+                            <h3 class="showcase-title">Your 24/7 AI Private Tutor</h3>
+                            <p class="showcase-desc">
+                                Seamlessly switch between solving doubts, testing your recall, and planning your study roadmap.
+                            </p>
+                            <div class="card-action highlight">
+                                <span>Open AI Workspace</span>
+                                <span class="action-arrow">→</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORKSPACE SECTION -->
+        <section class="workspace-section" id="workspace">
+            <div class="section-container">
+                <div class="workspace-header">
+                    <div class="workspace-header-text">
+                        <span class="section-tag">AI WORKSPACE</span>
+                        <h2 class="section-heading">
+                            Interactive <span class="gradient-text">Study Studio</span>
+                        </h2>
+                        <p class="section-subtext">
+                            Select a task, enter your topic or prompt, and let EduGenie generate tailored educational insights.
+                        </p>
+                    </div>
+                    <div class="workspace-status-badge">
+                        <span class="status-indicator live"></span>
+                        <span id="workspaceStatusText">Ready for Prompts</span>
+                    </div>
+                </div>
+
+                <div class="workspace-card">
+                    <!-- Task Selector Tabs -->
+                    <div class="task-tabs-container" role="tablist" aria-label="EduGenie Task Selector">
+                        <button type="button" class="task-tab active" id="tab-qa" data-task="qa" role="tab" aria-selected="true" onclick="selectTask('qa')">
+                            <span class="tab-icon">💬</span>
+                            <span class="tab-label">Q&A</span>
+                        </button>
+                        <button type="button" class="task-tab" id="tab-explain" data-task="explain" role="tab" aria-selected="false" onclick="selectTask('explain')">
+                            <span class="tab-icon">💡</span>
+                            <span class="tab-label">Explain</span>
+                        </button>
+                        <button type="button" class="task-tab" id="tab-quiz" data-task="quiz" role="tab" aria-selected="false" onclick="selectTask('quiz')">
+                            <span class="tab-icon">🎯</span>
+                            <span class="tab-label">Quiz</span>
+                        </button>
+                        <button type="button" class="task-tab" id="tab-summarize" data-task="summarize" role="tab" aria-selected="false" onclick="selectTask('summarize')">
+                            <span class="tab-icon">📑</span>
+                            <span class="tab-label">Summarize</span>
+                        </button>
+                        <button type="button" class="task-tab" id="tab-learn" data-task="learn" role="tab" aria-selected="false" onclick="selectTask('learn')">
+                            <span class="tab-icon">🗺️</span>
+                            <span class="tab-label">Learning Path</span>
+                        </button>
+                    </div>
+
+                    <!-- Input Section -->
+                    <div class="workspace-input-area">
+                        <div class="input-header">
+                            <div class="input-header-left">
+                                <label for="userInput" id="inputTitle" class="input-label-title">Ask EduGenie a Question</label>
+                                <span id="inputSubtitle" class="input-label-subtitle">Type your query clearly to get the best explanation</span>
+                            </div>
+                            <div class="input-header-right">
+                                <span class="shortcut-pill" title="Press Ctrl + Enter to generate">
+                                    <kbd>Ctrl</kbd> + <kbd>Enter</kbd>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Example Suggestion Pills -->
+                        <div class="example-chips-wrapper">
+                            <span class="chips-label">Try asking:</span>
+                            <div class="example-chips" id="exampleChips">
+                                <!-- Populated dynamically by script.js -->
+                            </div>
+                        </div>
+
+                        <!-- Textarea Area -->
+                        <div class="textarea-wrapper">
+                            <textarea 
+                                id="userInput" 
+                                class="workspace-textarea" 
+                                placeholder="e.g., Which is the largest ocean? How do plants convert sunlight into food?"
+                                rows="6"
+                                aria-label="Input prompt for EduGenie"
+                                oninput="updateCharacterCount()"
+                            ></textarea>
+                            <button type="button" class="btn-clear-input" id="clearInputBtn" onclick="clearInput()" title="Clear text" aria-label="Clear input text">
+                                ✕
+                            </button>
+                        </div>
+
+                        <!-- Input Footer Controls -->
+                        <div class="input-footer">
+                            <div class="input-meta">
+                                <span id="charCounter" class="char-counter">0 / 4000 characters</span>
+                                <span class="meta-hint">✦ Markdown supported</span>
+                            </div>
+                            <div class="input-btn-group">
+                                <button type="button" class="btn-ghost" onclick="clearInput()">
+                                    Clear
+                                </button>
+                                <button type="button" class="btn-generate" id="generateBtn" onclick="submitTask()">
+                                    <span class="btn-spinner" id="btnSpinner" style="display: none;"></span>
+                                    <span id="generateBtnText">Generate Response</span>
+                                    <span class="btn-spark-icon">✨</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Loading State Card -->
+                    <div class="workspace-loading-box" id="loadingBox" style="display: none;" role="status">
+                        <div class="loading-visual">
+                            <div class="spinner-ring"></div>
+                            <span class="loading-orb-spark">✦</span>
+                        </div>
+                        <div class="loading-text">
+                            <strong class="loading-title">EduGenie is thinking...</strong>
+                            <p class="loading-subtitle">Synthesizing educational insights and generating response</p>
+                        </div>
+                    </div>
+
+                    <!-- Error State Card -->
+                    <div class="workspace-error-box" id="errorBox" style="display: none;" role="alert">
+                        <div class="error-icon-wrap">
+                            <span>⚠️</span>
+                        </div>
+                        <div class="error-text-wrap">
+                            <strong class="error-title">Unable to complete request</strong>
+                            <p class="error-message" id="errorText">Please verify your connection and try again.</p>
+                        </div>
+                        <button type="button" class="error-dismiss-btn" onclick="hideError()" aria-label="Dismiss error">✕</button>
+                    </div>
+
+                    <!-- RESULT DISPLAY SECTION -->
+                    <div class="workspace-result-box" id="resultBox" style="display: none;">
+                        <div class="result-header">
+                            <div class="result-title-group">
+                                <div class="result-ai-avatar">✦</div>
+                                <div>
+                                    <span class="result-badge-label">EDUGENIE AI OUTPUT</span>
+                                    <h3 class="result-heading" id="resultTaskTitle">Generated Response</h3>
+                                </div>
+                            </div>
+                            <div class="result-actions">
+                                <button type="button" class="btn-action-tool" id="copyBtn" onclick="copyResult()" title="Copy to clipboard">
+                                    <span class="action-icon">📋</span>
+                                    <span id="copyBtnText">Copy</span>
+                                </button>
+                                <button type="button" class="btn-action-tool" onclick="regenerateResult()" title="Regenerate this response">
+                                    <span class="action-icon">🔄</span>
+                                    <span>Regenerate</span>
+                                </button>
+                                <button type="button" class="btn-action-tool danger" onclick="clearResult()" title="Close output">
+                                    <span class="action-icon">✕</span>
+                                    <span>Clear</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Formatted Text / Markdown Output Container -->
+                        <div class="result-content-wrap" id="textContentWrap">
+                            <div class="result-markdown" id="resultContent"></div>
+                        </div>
+
+                        <!-- Interactive MCQ Quiz Container -->
+                        <div class="quiz-container-wrap" id="quizContentWrap" style="display: none;">
+                            <div class="quiz-meta-bar">
+                                <div class="quiz-count-badge" id="quizQuestionCountBadge">3 Questions Available</div>
+                                <div class="quiz-instructions">Select one answer per question, then click <strong>Submit Quiz</strong> to grade your answers.</div>
+                            </div>
+
+                            <div class="quiz-cards-list" id="quizQuestionsList">
+                                <!-- Quiz questions rendered dynamically here -->
+                            </div>
+
+                            <!-- Quiz Score Banner -->
+                            <div class="quiz-score-banner" id="quizScoreBanner" style="display: none;">
+                                <div class="score-banner-content">
+                                    <div class="score-trophy" id="scoreTrophyIcon">🏆</div>
+                                    <div class="score-data">
+                                        <div class="score-headline" id="scoreHeadline">Quiz Completed!</div>
+                                        <div class="score-badges-row">
+                                            <span class="score-badge primary" id="scoreText">Your Score: 3 / 3</span>
+                                            <span class="score-badge secondary" id="percentageText">Percentage: 100%</span>
+                                        </div>
+                                        <p class="score-feedback-text" id="scoreFeedback">Outstanding! Perfect score on your quiz!</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-restart-quiz" id="restartQuizBtn" onclick="restartQuiz()">
+                                    <span>🔄 Retake Quiz</span>
+                                </button>
+                            </div>
+
+                            <div class="quiz-action-footer">
+                                <button type="button" class="btn-submit-quiz" id="submitQuizBtn" onclick="submitQuiz()">
+                                    <span>Submit & Check Answers</span>
+                                    <span class="btn-arrow">✓</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section" id="about">
+            <div class="section-container">
+                <div class="about-grid">
+                    <div class="about-info">
+                        <span class="section-tag">ABOUT EDUGENIE</span>
+                        <h2 class="section-heading">
+                            Empowering students with <br>
+                            <span class="gradient-text">intelligent AI tutoring</span>
+                        </h2>
+                        <p class="about-lead">
+                            EduGenie is an AI-powered learning assistant designed to help students understand concepts, practice knowledge, summarize educational content, and create personalized learning paths.
+                        </p>
+                        <p class="about-subtext">
+                            Whether you are preparing for exams, mastering a programming language, unraveling complex physics formulas, or synthesizing dense historical research, EduGenie gives you crystal-clear explanations and customized study roadmaps on demand.
+                        </p>
+
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">⚡</div>
+                                <div>
+                                    <strong>Instant Clarity</strong>
+                                    <span>Break down complicated jargon into intuitive analogies.</span>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🎯</div>
+                                <div>
+                                    <strong>Active Recall Practice</strong>
+                                    <span>Test your knowledge with automatically generated MCQs.</span>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🧭</div>
+                                <div>
+                                    <strong>Personalized Roadmaps</strong>
+                                    <span>Step-by-step milestones tailored to your exact goal.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-card-visual">
+                        <div class="about-glass-card">
+                            <div class="glass-card-header">
+                                <span class="badge-spark">✦</span>
+                                <span>Why Students Choose EduGenie</span>
+                            </div>
+                            <div class="stats-list">
+                                <div class="stat-row">
+                                    <span class="stat-name">Structured Learning</span>
+                                    <span class="stat-val">100%</span>
+                                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 100%;"></div></div>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-name">Instant Response Time</span>
+                                    <span class="stat-val">&lt; 1s</span>
+                                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 95%;"></div></div>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-name">Subject Coverage</span>
+                                    <span class="stat-val">Universal</span>
+                                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 98%;"></div></div>
+                                </div>
+                            </div>
+                            <div class="glass-quote">
+                                <em>"EduGenie turns hours of confusing lecture reading into intuitive, structured comprehension in minutes."</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section">
+            <div class="section-container">
+                <div class="cta-card">
+                    <div class="cta-orb"></div>
+                    <div class="cta-content">
+                        <span class="section-tag">START LEARNING</span>
+                        <h2 class="cta-title">Ready to Learn Smarter?</h2>
+                        <p class="cta-subtitle">
+                            Start your AI-powered learning journey with EduGenie today and transform the way you study.
+                        </p>
+                        <button type="button" class="btn-primary-large" onclick="scrollToWorkspace()">
+                            <span>Start Learning Now</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="brand-badge small">
+                        <span class="brand-spark">✦</span>
+                    </div>
+                    <div>
+                        <div class="brand-title">EduGenie</div>
+                        <div class="brand-tag">AI LEARNING ASSISTANT</div>
+                    </div>
+                </div>
+                <nav class="footer-nav">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#features" class="footer-link">Features</a>
+                    <a href="#workspace" class="footer-link">Workspace</a>
+                    <a href="#about" class="footer-link">About</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 EduGenie. All rights reserved.</p>
+                <div class="footer-status">
+                    <span class="status-indicator"></span>
+                    <span>AI Engine Online</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Popup Container -->
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Main JavaScript Logic -->
+    <script src="script.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
